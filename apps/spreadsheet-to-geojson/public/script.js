@@ -702,6 +702,15 @@ exports.text = function(fileName, string) {
 	saveAs(blob, fileName)
 }
 
+exports.svg = function(fileName, string) {
+	var blob = new Blob([string], {type: 'image/svg+xml;charset=utf-8'})
+	saveAs(blob, fileName)
+}
+
+exports.blob = function(fileName, blob) {
+	saveAs(blob, fileName)
+}
+
 
 },{}],12:[function(require,module,exports){
 /*!

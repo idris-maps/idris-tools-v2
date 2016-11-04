@@ -3,5 +3,6 @@
 	{"name": "Convert SHP to GeoJSON", "folder": "shp-to-geojson", "keywords": "SHP, GeoJSON"},
 	{"name": "Convert CSV to GeoJSON", "folder": "csv-to-geojson", "keywords": "CSV, GeoJSON"},
 	{"name": "Convert Spreadsheet to GeoJSON", "folder": "spreadsheet-to-geojson", "keywords": "paste from spreadsheet, GeoJSON"},
-	{"name": "Convert GeoJSON to SQL", "folder": "geojson-to-sql", "keywords": "SQL, GeoJSON"}
+	{"name": "Convert GeoJSON to SQL", "folder": "geojson-to-sql", "keywords": "SQL, GeoJSON"},
+	{"name": "Convert SVG to PNG", "folder": "svg-to-png", "keywords": "SVG, PNG"}
 ]

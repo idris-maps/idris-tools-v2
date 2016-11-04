@@ -4,6 +4,7 @@
 	{"name": "Convert CSV to GeoJSON", "folder": "csv-to-geojson"},
 	{"name": "Convert Spreadsheet to GeoJSON", "folder": "spreadsheet-to-geojson"},
 	{"name": "Convert GeoJSON to SQL", "folder": "geojson-to-sql"},
+	{"name": "Convert SVG to PNG", "folder": "svg-to-png"},
 	{"name": "Create a map", "folder": "svg-map"},
 	{"name": "Find latitude longitude", "folder": "find-latitude-longitude"}
 ]

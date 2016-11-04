@@ -16,4 +16,7 @@ exports.svg = function(fileName, string) {
 	saveAs(blob, fileName)
 }
 
+exports.blob = function(fileName, blob) {
+	saveAs(blob, fileName)
+}
 
