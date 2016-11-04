@@ -1,0 +1,145 @@
+html, body { margin: 0; padding: 0; width: 100%; }
+body { font-family: arial, helvetica, sans-serif; color: #29606F; }
+a { text-decoration: none; color: #B24F3F; font-weight: bold; }
+* { box-sizing: border-box; }
+
+#header {
+	width: 100%;
+	background-color: #29606F;
+	padding: 10px;
+}
+
+#header img { height: 50px; width: auto; }
+#title {
+	font-size: 1.2em;
+	width: 100%;
+	text-align: center;
+}
+#menu { 
+	width: 100%; 
+}
+#menu.closed #close-menu-div {
+	width: 100%;
+}
+#close-menu-div {
+	width: 300px;
+	margin: auto;
+	text-align: right;
+}
+
+#drop-zone {
+	width: 95%;
+	margin: auto;
+	height: 100px;
+	border: 2px dashed #29606F;
+	border-radius: 5px;
+	background-image: url(../img/file-icon.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+#drop-zone:hover {
+	background-color: #9EB4BA
+}
+#menu-body #msg { text-align: center; }
+
+#menu-body {
+	width: 300px;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: white;
+}
+
+#menu-body button, 
+#menu-body input, 
+#menu-body p,
+#menu-body select { width: 100%; } 
+
+#menu-body button {
+	display: inline-block;
+	padding: 6px 12px;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	width: 100%;
+	margin-top: 5px;
+	border: 1px solid #29606F;
+	background-color: #29606F;
+	color: white;
+}
+
+#menu-body .layer-item {
+	display: inline-block;
+	padding: 6px 12px;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	width: 100%;
+	border: 1px solid white;
+	background-color: #9EB4BA;
+	color: #29606F;
+}
+
+#menu-body .del-sbp {
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	width: 100%;
+	border: 1px solid #B24F3F;
+	background-color: #B24F3F;
+	color: white;
+}
+
+#menu-body .red-btn {
+	display: inline-block;
+	padding: 6px 12px;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	width: 100%;
+	margin-top: 5px;
+	border: 1px solid #B24F3F;
+	background-color: #B24F3F;
+	color: white;
+}
+
+#menu-body table {
+	width: 100%;
+}
+
+#menu-body .table-head {
+	background-color: #29606F;
+	color: white;
+}
+
+#menu-body tr {
+	text-align: center;
+}
+
+.layer-style-table  p, .sbp-item-label {
+	margin: 0;
+}
+
+#close-menu-div img {
+	padding: 5px;
+}
+
+
+

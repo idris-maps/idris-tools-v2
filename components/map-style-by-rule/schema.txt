@@ -1,0 +1,28 @@
+INPUT
+- on init
+{
+	type: // style property
+	property: // feature property
+	feats: // features
+}
+- on rule
+{
+	operator: // 
+	propValue: // property value
+	styleValue: // style value
+}
+
+OUTPUT
+
+{
+	type: // style property
+	property: // feature property
+	data: // array
+		[
+			{ 
+				propValue: // property value
+				styleValue: // style value
+			}
+		]
+}
+

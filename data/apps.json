@@ -1,0 +1,9 @@
+[
+	{"name": "Convert GPX to GeoJSON", "folder": "gpx-to-geojson"},
+	{"name": "Convert SHP to GeoJSON", "folder": "shp-to-geojson"},
+	{"name": "Convert CSV to GeoJSON", "folder": "csv-to-geojson"},
+	{"name": "Convert Spreadsheet to GeoJSON", "folder": "spreadsheet-to-geojson"},
+	{"name": "Convert GeoJSON to SQL", "folder": "geojson-to-sql"},
+	{"name": "Create a map", "folder": "svg-map"},
+	{"name": "Find latitude longitude", "folder": "find-latitude-longitude"}
+]
