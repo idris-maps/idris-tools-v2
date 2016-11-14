@@ -1,0 +1,5 @@
+{
+	"name": "Draw a map",
+	"keywords": "draw, map, export, geojson",
+	"description": "Draw on a map and export as GeoJSON"
+}

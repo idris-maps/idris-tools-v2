@@ -335,9 +335,10 @@ module.exports = function(divId, img, callback) {
 	})
 }
 
-function download(c, img) {
+function download(c, img, callback) {
 	c.toBlob(function(blob) {
 		save.blob(img.name + '.png', blob)
+		callback()
 	})
 }
 

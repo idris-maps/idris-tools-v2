@@ -1,7 +1,6 @@
 var msg = require('./msg')
 var json = require('./read-json')
 var geojson = require('./validate-geojson')
-var separateGeoTypes = require('./separate-geotypes')
 
 module.exports = function(file, evt) {
 	msg.write('Verifying document...')
