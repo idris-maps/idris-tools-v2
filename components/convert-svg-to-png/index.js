@@ -11,7 +11,7 @@ module.exports = function(divId, img, callback) {
 		var c = document.getElementById('canvas')
 		canvg(c, img.svg, opt)
 		if(c.width !== 1 && c.height !== 1) {
-			download(c, img)
+			download(c, img, function() { callback() })
 		} else {
 			html.cannot()
 		}

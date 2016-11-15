@@ -94,20 +94,12 @@ a { text-decoration: none; color: #B24F3F; font-weight: bold; }
 	text-align: left;
 }
 
-#map {
-	background-color: white;
+.scroll-y {
+	max-height: 300px;
+	overflow-y: auto;
 }
 
-#map .l-img-c {
-	width: 100%;
-	text-align: center;
-}
-
-#map .l-img {
-	width: 60px
-}
-
-#map .l-img-sm {
-	width: 30px
-}
+.checkbox-item { width: 100% }
+#selecter .checkbox-item input { width: 30px }
+.checkbox-item span { margin-left: 20px; }
 

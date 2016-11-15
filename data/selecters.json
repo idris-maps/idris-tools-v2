@@ -1,3 +1,5 @@
 [
-	{"name": "Select by bounding box", "folder": "by-bbox", "keywords": "by bounding box, by bbox, GeoJSON"}
+	{"name": "Select by bounding box", "folder": "by-bbox-values", "keywords": "by bounding box, by bbox, GeoJSON"},
+	{"name": "Select by bounding box", "folder": "by-bbox-draw", "keywords": "by drawn bounding box, draw on map, GeoJSON"},
+	{"name": "Select by property", "folder": "by-property", "keywords": "by property, GeoJSON"}
 ]

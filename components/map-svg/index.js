@@ -49,7 +49,7 @@ module.exports = function(bbox, canvas) {
 	o.destroy = function() {
 		if(o.rendered) {
 			var div = document.getElementById(o.renderDivId)
-			while (myNode.firstChild) { div.removeChild(div.firstChild) }	
+			while (div.firstChild) { div.removeChild(div.firstChild) }	
 			o.rendered = false
 		}
 	}

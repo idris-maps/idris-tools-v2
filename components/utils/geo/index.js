@@ -19,5 +19,6 @@ exports.getAllProperties = function(feats) { return properties.getAll(feats) }
 exports.getPropertyValues = function(feats, property) { return properties.getValues(feats, property) }
 exports.getUniqPropertyValues = function(feats, property) { return properties.getUniqValues(feats, property) }
 exports.numericValues = function(feats, property) { return properties.numericValues(feats, property) }
+exports.propInfo = function(collection) { return properties.propInfo(collection.features) }
 
 
