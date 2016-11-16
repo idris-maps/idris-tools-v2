@@ -301,7 +301,7 @@ function isUndefined(arg) {
 },{}],2:[function(require,module,exports){
 var drop = require('../../components/drop-zone-svg')
 var convert = require('../../components/convert-svg-to-png')
-console.log(convert)
+
 window.onload = function() {
 	init()
 }
@@ -328,7 +328,7 @@ module.exports = function(divId, img, callback) {
 		var c = document.getElementById('canvas')
 		canvg(c, img.svg, opt)
 		if(c.width !== 1 && c.height !== 1) {
-			download(c, img)
+			download(c, img, function() { callback() })
 		} else {
 			html.cannot()
 		}

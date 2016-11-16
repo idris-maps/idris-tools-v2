@@ -3,6 +3,7 @@ var findLL = require('./lib/create-find-ll')
 var draw = require('./lib/create-draw')
 var converters = require('./lib/create-converters')
 var selecters = require('./lib/create-selecters')
+var edit = require('./lib/create-edit')
 var args = process.argv
 
 var cmd = args[2]
@@ -16,6 +17,8 @@ if(cmd === 'converters') {
 	findLL(function() { console.log('Done creating find-latitude-longitude') })
 } else if(cmd === 'draw') {
 	draw(function() { console.log('Done creating draw') })
+} else if(cmd === 'edit') {
+	edit(function() { console.log('Done creating edit-properties') })
 }
 
 

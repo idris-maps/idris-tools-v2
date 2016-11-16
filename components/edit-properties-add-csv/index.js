@@ -5,6 +5,7 @@ var parseCsv = require('./lib/parse')
 var Emitter = require('events').EventEmitter
 var drop = require('../drop-zone-csv')
 var utils = require('./lib/utils')
+var save = require('../utils/save')
 
 module.exports = function(divId, data, callback) {
 	var evt = new Emitter()
@@ -18,7 +19,7 @@ module.exports = function(divId, data, callback) {
 				utils.checkParsed(evt, result)
 			})
 		})
-	})	
+	})
 
 	evt.on('parse-errors', function(errs) {
 		html.parseErrors(divId, errs)
@@ -38,7 +39,7 @@ module.exports = function(divId, data, callback) {
 	})
 
 	evt.on('is-head', function() {
-		evt.emit('got-header', csv[0], true)
+		evt.emit('got-header', conf.csv[0], true)
 	})
 
 	evt.on('got-header', function(head, removeFirst) {

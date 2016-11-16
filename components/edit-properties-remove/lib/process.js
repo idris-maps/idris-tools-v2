@@ -1,4 +1,4 @@
-module.exports = function(feats, props) {
+module.exports = function(feats, props, callback) {
 	var newFeats = []
 	feats.forEach(function(f) {
 		var newProps = {}
@@ -6,5 +6,5 @@ module.exports = function(feats, props) {
 		f.properties = newProps
 		newFeats.push(f)
 	})
-	return newFeats
+	callback(newFeats)
 }

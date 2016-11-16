@@ -3,7 +3,7 @@ exports.init = function(evt) {
 		var vals = getChecked(false)
 		evt.emit('props-to-keep', vals)
 	}	
-	document.getElementById('rm-not-selected').onclick = function() {
+	document.getElementById('rm-unselected').onclick = function() {
 		var vals = getChecked(true)
 		evt.emit('props-to-keep', vals)
 	}
