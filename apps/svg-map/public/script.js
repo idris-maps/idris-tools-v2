@@ -543,6 +543,18 @@ function isGeoJSON(data, callback) {
 }
 
 function isJSON(file) {
+	var fileSplit = file.name.split('.')
+	var fileType = fileSplit[fileSplit.length -1]
+	if(fileType === 'json' || fileType === 'geojson') {
+		msg.write('Document is a JSON file')
+		msg.add('Verifying if it is a valid GeoJSON file...')
+		return true
+	} else {
+		msg.write('Document is not a JSON file')
+		return false
+	}
+
+/* ANDROID ????
 	if(file.type === 'application/json') {
 		msg.write('Document is a JSON file')
 		msg.add('Verifying if it is a valid GeoJSON file...')
@@ -551,6 +563,7 @@ function isJSON(file) {
 		msg.write('Document is not a JSON file')
 		return false
 	}
+*/
 }
 
 function isTooBig(file) {
@@ -2254,7 +2267,7 @@ module.exports = function(bbox, canvas) {
 	o.destroy = function() {
 		if(o.rendered) {
 			var div = document.getElementById(o.renderDivId)
-			while (myNode.firstChild) { div.removeChild(div.firstChild) }	
+			while (div.firstChild) { div.removeChild(div.firstChild) }	
 			o.rendered = false
 		}
 	}
@@ -2625,6 +2638,7 @@ exports.getAllProperties = function(feats) { return properties.getAll(feats) }
 exports.getPropertyValues = function(feats, property) { return properties.getValues(feats, property) }
 exports.getUniqPropertyValues = function(feats, property) { return properties.getUniqValues(feats, property) }
 exports.numericValues = function(feats, property) { return properties.numericValues(feats, property) }
+exports.propInfo = function(collection) { return properties.propInfo(collection.features) }
 
 
 
@@ -2701,13 +2715,17 @@ function getBbox(points) {
 },{"./get-all-points":37}],39:[function(require,module,exports){
 var util = require('./utils')
 
-exports.getAll = function(feats) {
+exports.getAll = function(feats) { return getAll(feats) }
+
+function getAll(feats) {
 	var props = []
 	for(k in feats[0].properties) { props.push(k) }
 	return props
 }
 
-exports.getValues = function(feats, property) {
+exports.getValues = function(feats, property) { return getValues(feats, property) }
+
+function getValues(feats, property) {
 	var vals = []
 	feats.forEach(function(f) {
 		vals.push(f.properties[property])
@@ -2715,7 +2733,9 @@ exports.getValues = function(feats, property) {
 	return vals.sort(function(a,b) {return a - b })
 }
 
-exports.getUniqValues = function(feats, property) {
+exports.getUniqValues = function(feats, property) { return getUniqValues(feats, property) }
+
+function getUniqValues(feats, property) {
 	var vals = []
 	feats.forEach(function(f) {
 		vals.push(f.properties[property])
@@ -2723,7 +2743,9 @@ exports.getUniqValues = function(feats, property) {
 	return util.uniq(vals)
 }
 
-exports.numericValues = function(feats, property) {
+exports.numericValues = function(feats, property) { return numericValues(feats, property) }
+
+function numericValues(feats, property) {
 	var r = true
 	feats.forEach(function(f) {
 		if(f.properties[property]) {
@@ -2732,6 +2754,25 @@ exports.numericValues = function(feats, property) {
 	})
 	return r
 }
+
+exports.propInfo = function(feats) {
+	var properties = []
+	var props = geo.getAllProperties(o.feats)
+	props.forEach(function(prop) {
+		var obj = {
+			key: prop,
+			uniqValues: getUniqValues(o.feats, prop),
+			isNum: numericValues(o.feats, prop)
+		}
+		obj.maxValue = obj.uniqValues[0]
+		obj.minValue = obj.uniqValues[obj.uniqValues.length - 1]
+		obj.nbUniqValues = obj.uniqValues.length
+
+		properties.push(obj)
+	})
+	return properties
+}
+
 
 
 },{"./utils":40}],40:[function(require,module,exports){
@@ -2746,14 +2787,22 @@ exports.isGeom = function(geometry) {
 
 exports.uniq = function(arr) {
 	var uniq = []
+	var isNum = true
 	arr.forEach(function(val) {
+		if(isNaN(val)) { isNum = false } 
 		var exist = false
 		uniq.forEach(function(uVal) {
 			if(val === uVal) { exist = true }
 		})
 		if(!exist) { uniq.push(val) }
 	})
-	uniq.sort()
+	if(isNum) {
+		uniq = uniq.map(function(v) { return +v })
+	}
+	uniq.sort(function(a, b) {
+		if(a > b) { return 1 }
+		else { return -1 }
+	})
 	return uniq
 }
 
@@ -2815,6 +2864,9 @@ exports.svg = function(fileName, string) {
 	saveAs(blob, fileName)
 }
 
+exports.blob = function(fileName, blob) {
+	saveAs(blob, fileName)
+}
 
 
 },{}],43:[function(require,module,exports){

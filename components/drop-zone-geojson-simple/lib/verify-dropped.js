@@ -46,6 +46,18 @@ function isGeoJSON(data, callback) {
 }
 
 function isJSON(file) {
+	var fileSplit = file.name.split('.')
+	var fileType = fileSplit[fileSplit.length -1]
+	if(fileType === 'json' || fileType === 'geojson') {
+		msg.write('Document is a JSON file')
+		msg.add('Verifying if it is a valid GeoJSON file...')
+		return true
+	} else {
+		msg.write('Document is not a JSON file')
+		return false
+	}
+
+/* ANDROID ????
 	if(file.type === 'application/json') {
 		msg.write('Document is a JSON file')
 		msg.add('Verifying if it is a valid GeoJSON file...')
@@ -54,6 +66,7 @@ function isJSON(file) {
 		msg.write('Document is not a JSON file')
 		return false
 	}
+*/
 }
 
 function isTooBig(file) {

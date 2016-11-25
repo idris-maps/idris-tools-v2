@@ -19,6 +19,18 @@ if(cmd === 'converters') {
 	draw(function() { console.log('Done creating draw') })
 } else if(cmd === 'edit') {
 	edit(function() { console.log('Done creating edit-properties') })
+} else if(cmd === 'all') {
+	converters(function() { console.log('Done creating converters') 
+	selecters(function() { console.log('Done creating selecters') 
+	svgMap(function() { console.log('Done creating svg-map') 
+	findLL(function() { console.log('Done creating find-latitude-longitude') 
+	draw(function() { console.log('Done creating draw') 
+	edit(function() { console.log('Done creating edit-properties') })
+	})
+	})
+	})
+	})
+	})
 }
 
 

@@ -42,17 +42,19 @@ function toGeom(type, layer) {
 	if(type === 'rectangle') { 
 		var t = 'Polygon'
 		var cc = []
-		layer._latlngs[0].forEach(function(p) { cc.push([p.lat, p.lng]) })
+		layer._latlngs[0].forEach(function(p) { cc.push([p.lng, p.lat]) })
+		cc.push([layer._latlngs[0][0].lng, layer._latlngs[0][0].lat])
 		var c = [cc]
 	} else if(type === 'polygon') {  
 		var t = 'Polygon'
 		var cc = []
-		layer._latlngs[0].forEach(function(p) { cc.push([p.lat, p.lng]) })
+		layer._latlngs[0].forEach(function(p) { cc.push([p.lng, p.lat]) })
+		cc.push([layer._latlngs[0][0].lng, layer._latlngs[0][0].lat])
 		var c = [cc]
 	} else if(type === 'polyline') {
 		var t = 'LineString'
 		var c = []
-		layer._latlngs.forEach(function(p) { c.push([p.lat, p.lng]) })
+		layer._latlngs.forEach(function(p) { c.push([p.lng, p.lat]) })
 	} else if(type === 'marker') { 
 		var t = 'Point'
 		var c = [layer._latlng.lng, layer._latlng.lat] 

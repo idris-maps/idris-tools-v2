@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="Idris online mapping tools - help"/>
+		<meta name="keywords" content="Idris, online, mapping, tools, help"/>
+
+		<title>Idris online mapping tools - help</title>
+  <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id="header">
+			<a href="http://www.idris-maps.com">
+				<img src="../img/logo_fond_fonce.png" alt="Idris maps"/>
+			</a>
+		</div>
+
+		<div id="content">
+			<h1>Idris online map tools</h1>
+
+			<div class="page">
+				<a name="intro"><h2>Introduction</h2></a>
+				<p>With our online tools, you can edit geographic data and create maps directly from your browser. Without downloading mapping software on your machine. It even works on your mobile phone.</p>
+				<p>Everything happens in your browser. No data is being sent to our servers. You can work with your sensitive data without worrying about it traveling over the net.</p>
+				<a name="get-started"><h2>Get started</h2></a>
+				<p>Do you already have geographic data?</p>	
+				<a href="#data-formats"><button>Yes</button></a>
+				<a href="#get-data"><button>No. Where can I get some?</button></a>
+			</div>
+
+			<div class="page">
+				<a name="get-data"><h2>Get geographic data</h2></a>
+				<h3>Open street map</h3>
+				<p><a target="_blank" href="http://www.openstreetmap.org/">OSM</a> is the wikipedia of geodata. There are different ways to get hold of it. Have a look at their <a target="_blank" href="http://wiki.openstreetmap.org/wiki/Downloading_data">wiki</a>. Or try some of the options below.</p>
+				<h4>Overpass turbo</h4>
+				<p><a target="_blank" href="https://overpass-turbo.eu/">Overpass turbo</a> is an online tool to download data from OSM</p>
+				<h4>Mapzen</h4>
+				<p><a target="_blank" href="https://mapzen.com/">Mapzen</a> has some custom extracts of OSM data such as <a target="_blank" href="https://mapzen.com/data/borders/">Administrative areas by country</a> or <a target="_blank" href="https://mapzen.com/data/metro-extracts/">Extracts for metropolitan areas</a>.</p>
+				<p>When using data from OSM, or any other highly detailed geodata, do not forget to simplify it first. If you are making a world map, you do not need every single detail of the norwegian fjords for example. <a target="_blank" href="http://mapshaper.org/">Mapshaper</a> is an online tool (not related to Idris maps) that lets you do that.</p>  
+				<h3>Natural earth</h3>
+				<p><a target="_blank" href="http://www.naturalearthdata.com/">Natural Earth Data</a> has a wide range of downloadable worldwide geodata.</p>
+				<h3>Idris geodata</h3>
+				<p>We have a few datasets to get started on <a target="_blank" href="https://github.com/idris-maps/idris-geodata">github</a>. The collection is small at the moment but we will be adding datasets in the future.</p>
+				<h3>Draw your own</h3>
+				<p>You can create your own data by drawing it yourself with <a target="_blank" href="../draw" title="Draw on a map and save as GeoJSON">this tool</a> and save it as GeoJSON</p>
+				<a href="#data-formats"><button>Continue</button></a>
+
+			</div>
+
+			<div class="page">
+				<a name="data-formats"><h2>Geographic data formats</h2></a>
+				<p>Geographic data comes in many formats. For our tools we use the <a target="_blank" href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a> format but we provide <a target="_blank" href="#converters">converters</a> for the most common ones.</p>
+				<p>I have ...</p>
+				<a href="#edit"><button>GeoJSON</button></a>
+				<a href="#convert-shp"><button>Shapefiles</button></a>
+				<a href="#convert-gpx"><button>GPX files</button></a>
+				<a href="#convert-csv"><button>Data in a database or CSV files</button></a>
+			</div>
+
+			<div class="page">
+				<a name="convert-shp"><h2>Convert shapefiles (SHP)</h2></a>
+				<p>First, all related files (.shp, .dbf ...) need to be compressed into a ".zip" file. Then go to the tool <a target="_blank" href="../convert/shp-to-geojson/index.html" title="Convert shp to GeoJSON">here</a> and drop the file in the designated area.</p>
+				<a href="#edit"><button>Ok, I have a GeoJSON file now</button></a>
+				<a href="#data-formats"><button>I have yet other formats to convert</button></a>
+			</div>
+
+			<div class="page">
+				<a name="convert-gpx"><h2>Convert GPX files</h2></a>
+				<p>Go to the tool <a target="_blank" href="../convert/gpx-to-geojson/index.html" title="Convert GPX to GeoJSON">here</a> and drop the file in the designated area.</p>
+				<a href="#edit"><button>Ok, I have a GeoJSON file now</button></a>
+				<a href="#data-formats"><button>I have yet other formats to convert</button></a>
+			</div>
+
+			<div class="page">
+				<a name="convert-csv"><h2>Convert data from databases and CSV files</h2></a>
+				<p>If your geodata is in a database, chances are you can extract it as GeoJSON directly. In PostGIS, you can use "ST_AsGeoJSON()" for example.</p>
+				<p>If not, export it as a <a target="_blank" href="https://en.wikipedia.org/wiki/Well-known_text">WKT</a> column in a CSV file. Go to the tool <a target="_blank" href="../convert/csv-to-geojson/index.html" title="Convert CSV to GeoJSON">here</a> and drop the CSV file in the designated area.</p>
+				<p>For geodata, the CSV converter takes either a WKT column or two columns with latitude and longitude for points.</p>
+				<p>If you have data on a spreadsheet, you can paste it <a target="_blank" href="../convert/spreadsheet-to-geojson/index.html">here</a>.
+				<p>For those working with databases, we also have a <a target="_blank" href="../convert/geojson-to-sql/index.html">tool</a> that creates an SQL script (geodata is in WKT) from a GeoJSON file.</p> 
+				<a href="#edit"><button>Ok, I have a GeoJSON file now</button></a>
+				<a href="#data-formats"><button>I have yet other formats to convert</button></a>
+			</div>
+
+			<div class="page">
+				<a name="edit"><h2>Edit a GeoJSON file</h2></a>
+				<p>Select features from your GeoJSON file
+				<a target="_blank" href="../select/by-bbox" title="Select GeoJSON features by bounding box">by bounding box</button></a>,
+				<a target="_blank" href="../select/by-property" title="Select GeoJSON features by property">by property</a> or 
+				<a target="_blank" href="../select/by-click" title="Select GeoJSON features by clicking on a map">by clicking on a map</a>.</p>
+				<p>Edit the properties of your GeoJSON file with <a target="_blank" href="../edit-properties" title="Edit GeoJSON properties">this tool</a>. It lets you remove properties or add some from a CSV file by joining a property with a column in the file.</p>
+				<p>When you have the features and properties you need, it is time to...</p>
+				<a href="#make-a-map"><button>Make a map</button></a>
+			</div>
+
+			<div class="page">
+				<a name="make-a-map"><h2>Make a map</h2></a>
+				<p>Open the <a target="_blank" href="../svg-map">map tool</a> and drop a GeoJSON file</p>
+				<h3>Style layers</h3>
+				<a name="style-polygons"><h3>Polygons</h3></a>
+				<p><b>fill</b>: is the color of the polygons. It takes any valid HTML color.</p>
+				<p><b>fill-opacity</b>: is the opacity the polygons. It takes a value between 0 and 1.</p>			 
+				<p><b>stroke</b>: is the color of the outlines. It takes any valid HTML color</p>
+				<p><b>stroke-opacity</b>: is the opacity the outlines. It takes a value between 0 and 1.</p>
+				<p><b>stroke-width</b>: is the width of the outlines. It takes any numeric value.</p>		
+
+				<a name="style-lines"><h3>Lines</h3></a>	 
+				<p><b>stroke</b>: is the color of the lines. It takes any valid HTML color</p>
+				<p><b>stroke-opacity</b>: is the opacity the lines. It takes a value between 0 and 1.</p>
+				<p><b>stroke-width</b>: is the width of the lines. It takes any numeric value.</p>	
+
+				<a name="style-polygons"><h3>Points</h3></a>
+				<p>Points can be presented either as circles or as labels. Circles are used by default, change to labels by clicking the "Show as labels" button.</p>
+				<h4>Points as circles</h4>
+				<p><b>r</b>: is the radius of the circles. It takes any numeric value.</p>
+				<p><b>fill</b>: is the color of the circles. It takes any valid HTML color.</p>
+				<p><b>fill-opacity</b>: is the opacity the circles. It takes a value between 0 and 1.</p>			 
+				<p><b>stroke</b>: is the color of the outines. It takes any valid HTML color</p>
+				<p><b>stroke-opacity</b>: is the opacity the outlines. It takes a value between 0 and 1.</p>
+				<p><b>stroke-width</b>: is the width of the outlines. It takes any numeric value.</p>	
+				<h4>Points as labels</h4>
+				<p><b>fill</b>: is the color of the labels. It takes any valid HTML color.</p>
+				<p><b>font-family</b>: is the typography. It takes any font recognised by your browser.</p>
+				<p><b>font-size</b>: is the size of the labels. It takes any numeric value.</p>
+				<p><b>text-anchor</b>: is the position of the text. It can be "start", "middle" or "end".</p>
+
+				<h3>Style by property</h3>
+				<p>To style individual features according to properties, use the "Style by property" button. Any of the styling possibilities above can be used (fill, stroke, r, font-size...). For properties with numeric values, you can choose to use rules. For example if you have a property "population" on polygons you can set the "fill" to orange for values above 10000 and red for values above 20000. For non-numeric values, you can enter the style by hand.</p>
+
+			<h3>Save</h3>
+			<p>When you are satisfied with your map you can save it by clicking "Download map".</p>
+			<p>By default the map will try to fit on your screen. So the canvas size is defined by the size of your screen and the projection is defined in order to fit the first layer. You can change both by clicking "Set map size" and "Set bounding box".</p>
+			<p>The map will be downloaded as a SVG file. If you wish to convert it to PNG, use <a targert="_blank" href="../convert/svg-to-png" title="Convert SVG to PNG">this tool</a>.
+			</div>
+
+
+		</div>
+
+		<a href="#"><img id="up" src="up-icon.png"></a>
+		<script src="script.js"></script>
+	</body>
+</html>

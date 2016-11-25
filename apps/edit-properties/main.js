@@ -14,7 +14,6 @@ window.onload = function() {
 }
 
 function menu(conf) {
-console.log('main', conf)
 	main('edit', conf, function(type) {
 		if(type === 'rm') { rm('edit', conf.data, function(r) { back(conf, r) }) }
 		else if(type === 'add-csv') {	addCsv('edit', conf.data, function(r) { back(conf, r) }) }

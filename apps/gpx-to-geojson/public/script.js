@@ -739,7 +739,16 @@ function getName(file) {
 }
 
 function isGPX(file) {
+/* ANDROID ???
 	if(file.type === 'application/gpx+xml' || file.type === 'application/gpx') {
+		msg.write('Document is a GPX file')
+		return true
+	} else {
+		msg.write('Document is not a GPX file')
+		return false
+	}
+*/
+	if(file.name.split('.')[1] === 'gpx') {
 		msg.write('Document is a GPX file')
 		return true
 	} else {
